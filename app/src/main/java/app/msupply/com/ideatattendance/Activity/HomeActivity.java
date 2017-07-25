@@ -12,19 +12,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
+import app.msupply.com.ideatattendance.Fragments.AttendanceStatus;
 import app.msupply.com.ideatattendance.R;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    DrawerLayout drawer;
+    String title;
+    TextView toolbarTitle;
+    Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
+        toolbarTitle = (TextView) findViewById(R.id.toolbar_title);
         /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,8 +38,9 @@ public class HomeActivity extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });*/
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
@@ -46,12 +52,30 @@ public class HomeActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        /* drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
+        }*/
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawers();
+            return;
         }
+        title = getString(R.string.nav_home);
+        toolbarTitle.setText(title);
+        new HomeActivity();
+        // This code loads home fragment when back key is pressed
+        // when user is in other fragment than home
+        /*if (shouldLoadHomeFragOnBackPress) {
+            // checking if user is on other navigation menu
+            // rather than home
+            new HomeActivity();
+            mDrawerLayout.closeDrawers();
+            invalidateOptionsMenu();
+        }*/
+
+        super.onBackPressed();
     }
 
     @Override
@@ -85,6 +109,14 @@ public class HomeActivity extends AppCompatActivity
         if (id == R.id.nav_markattendance) {
             // Handle the camera action
         } else if (id == R.id.nav_attendancestatus) {
+            title = getString(R.string.attendancestaus);
+            toolbarTitle.setText(title);
+            AttendanceStatus mFragment = new AttendanceStatus();
+            android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.container, mFragment, "Attendance Status").addToBackStack(null).commitAllowingStateLoss();
+            drawer.closeDrawers();
+            invalidateOptionsMenu();
+
 
         } else if (id == R.id.nav_profile) {
 
@@ -102,4 +134,8 @@ public class HomeActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
+
+
 }
