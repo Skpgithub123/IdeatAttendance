@@ -6,4 +6,28 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+
+
+    <string name="entermobilenumber">Enter Mobile Number</string>
+    <string name="Enterpassword">Enter Password</string>
+    <string name="Forgotpass">Forgot Password?</string>
+    <string name="err_msg_email">Enter Valid Mobile Number</string>
+    <string name="err_msg_password">Enter Valid Password</string>
+    register
+    <string name="register">Register</string>
+    <string name="err_enterotp">Enter OTP</string>
+    <string name="newpassword">New Password</string>
+    <string name="confirmpassword">Confirm Password</string>
+
+    <string name="err_validpassword">Enter Password</string>
+    <string name="err_validConfirmPassword">Enter ConfirmPassword</string>
+
+    <string name="Passwordmissmatch">Enter valid ConfirmPassword</string>
+
+    <string name="error_login_short_password">Password is too short. Minimun 4 characters is required.</string>
+    <string name="error_sign_up_password_mismatch">Password and confirm password do not match.</string>
+    <string name="error_sign_up_already_in_use">Email you entered is already in use. Please provide different email address.</string>
+    <string name="error_login_incorrect_username_or_password">Incorrect password or email</string>
+
+    //err_msg_email
 </resources>

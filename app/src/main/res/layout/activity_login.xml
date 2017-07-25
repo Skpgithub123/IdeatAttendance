@@ -2,7 +2,7 @@
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-android:background="@color/appred"
+android:background="@color/appyellow"
 android:id="@+id/container"
 android:layout_centerVertical="true"
 android:fillViewport="true"
@@ -54,17 +54,18 @@ tools:context="app.msupply.com.ideatattendance.Activity.LoginActivity">
 
 
             <EditText
-                android:id="@+id/input_email"
+                android:id="@+id/et_mbl"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:background="@drawable/loginshape"
-                android:drawableLeft="@drawable/smalluser"
+                android:drawableLeft="@drawable/calltwo"
                 android:drawablePadding="10dp"
-                android:hint="Enter email"
-                android:inputType="textEmailAddress"
+                android:hint="@string/entermobilenumber"
                 android:padding="15dp"
+                android:inputType="phone"
+                android:maxLength="10"
                 android:textColor="@color/block"
                 android:textCursorDrawable="@drawable/cursorcolor"
                 android:textSize="15sp" />
@@ -74,8 +75,10 @@ tools:context="app.msupply.com.ideatattendance.Activity.LoginActivity">
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+
+
                 <EditText
-                    android:id="@+id/input_password"
+                    android:id="@+id/et_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
@@ -84,13 +87,15 @@ tools:context="app.msupply.com.ideatattendance.Activity.LoginActivity">
                     android:background="@drawable/loginshape"
                     android:drawableLeft="@drawable/smallpass"
                     android:drawablePadding="10dp"
-                    android:hint="Enter password"
+                    android:hint="@string/Enterpassword"
                     android:imeOptions="actionDone"
-                    android:inputType="number|numberPassword"
                     android:padding="15dp"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
                     android:textColor="@color/block"
                     android:textCursorDrawable="@drawable/cursorcolor"
                     android:textSize="15sp" />
+
 
 
                 <ImageView
@@ -100,6 +105,7 @@ tools:context="app.msupply.com.ideatattendance.Activity.LoginActivity">
                     android:layout_gravity="right"
                     android:layout_marginTop="10dp"
                     android:padding="15dp"
+                    android:layout_marginRight="5dp"
                     android:visibility="visible"
                     android:src="@drawable/visioff" />
 
@@ -108,62 +114,84 @@ tools:context="app.msupply.com.ideatattendance.Activity.LoginActivity">
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="right"
+                    android:layout_marginRight="5dp"
                     android:layout_marginTop="10dp"
                     android:padding="15dp"
                     android:src="@drawable/dpass"
                     android:visibility="gone" />
 
-
-
             </FrameLayout>
 
 
             <TextView
-                android:id="@+id/btn_login"
+                android:id="@+id/tv_login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="18dp"
-                android:background="@color/yellow_400"
+                android:background="@color/appblue"
                 android:gravity="center"
                 android:padding="15dp"
                 android:text="Signin"
-                android:textColor="@color/block"
+                android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
 
-            <TextView
-                android:id="@+id/Tv_forgotpass"
-                style="?android:listSeparatorTextViewStyle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:layout_marginBottom="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="15dp"
-                android:text="forgotpass"
-                android:textColor="#ffffff"
-                android:textSize="16dp"
-                android:textStyle="bold" />
 
 
-            <TextView
-                android:id="@+id/link_signup"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:background="@color/yellow_400"
-                android:clickable="true"
-                android:gravity="center"
-                android:padding="15dp"
-                android:text="Signup"
-                android:textColor="@color/block"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:padding="15dp">
+
+                <TextView
+                    android:id="@+id/tv_signup"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight=".2"
+                    android:background="@drawable/buttonselector"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="Signup"
+                    android:layout_marginRight="2dp"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/tv_forgotpass"
+                    style="?android:listSeparatorTextViewStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight=".2"
+                    android:gravity="center_horizontal|center_vertical"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:background="@drawable/buttonselector"
+                    android:layout_marginLeft="2dp"
+                    android:text="@string/Forgotpass"
+                    android:textColor="#ffffff"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+
+
+
+
 
             <!--
                             <RelativeLayout
