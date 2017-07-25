@@ -33,7 +33,7 @@
             android:name=".Activity.HomeActivity"
             android:launchMode = "singleInstance"/>
         <activity android:name=".Activity.RegisterationActivity"
-            android:launchMode = "standard"></activity>
+            android:launchMode = "singleInstance"></activity>
     </application>
 
 </manifest>
