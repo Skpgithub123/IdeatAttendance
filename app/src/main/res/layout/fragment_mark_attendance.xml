@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/appyellow"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/btnCapture"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="75dp"
+        android:text="Camera" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:src="@drawable/ph_user"
+        android:layout_height="300dp" />
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:padding="15dp"
+        android:textStyle="bold"
+        android:background="#c6c6c6"
+        android:text="Display the details of Users" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:text="Mark Attendance"
+        android:padding="15dp"
+        android:id="@+id/mark_attance"
+        android:layout_marginTop="25dp"
+        android:gravity="center_horizontal"
+        android:background="@drawable/buttonselector"
+        android:layout_marginRight="25dp"/>
+</LinearLayout>

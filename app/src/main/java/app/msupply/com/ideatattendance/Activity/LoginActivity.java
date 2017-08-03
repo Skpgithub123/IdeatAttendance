@@ -52,22 +52,20 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         tv_signup = (TextView) findViewById(R.id.tv_signup);
         tv_forgot = (TextView) findViewById(R.id.tv_forgotpass);
+
+
+
         et_mbl    = (EditText) findViewById(R.id.et_mbl);
         et_password   = (EditText) findViewById(R.id.et_password);
         et_mbl.addTextChangedListener(new MyTextWatcher(et_mbl));
         et_password.addTextChangedListener(new MyTextWatcher(et_password));
 
 
-
-
         tv_signup.setOnClickListener(this);
         tv_forgot.setOnClickListener(this);
         tv_login.setOnClickListener(this);
 
-
-
         et_mbl.addTextChangedListener(new MyTextWatcher(et_mbl));
-
 
     }
 
@@ -116,7 +114,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     Log.d("=====","suceesss");
 
                     Log.d("toast","****   ");
-
+                    Login_Server();
                     Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
                     startActivity(intent);
 
@@ -206,5 +204,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private  boolean isValid_Pass(String password_length)
     {
         return  !TextUtils.isEmpty(password_length) && password_length.length()==4;
+    }
+
+    public void Login_Server()
+    {
+
+
+
     }
 }

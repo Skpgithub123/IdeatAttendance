@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">IdeatAttendance</string>
+    <string name="app_name">Idea Promoter</string>
     <string name="title_activity_home">HomeActivity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -14,7 +14,7 @@
     <string name="Forgotpass">Forgot Password?</string>
     <string name="err_msg_email">Enter Valid Mobile Number</string>
     <string name="err_msg_password">Enter Valid Password</string>
-    register
+
     <string name="register">Register</string>
     <string name="err_enterotp">Enter OTP</string>
     <string name="newpassword">New Password</string>
@@ -29,6 +29,9 @@
     <string name="error_sign_up_password_mismatch">Password and confirm password do not match.</string>
     <string name="error_sign_up_already_in_use">Email you entered is already in use. Please provide different email address.</string>
     <string name="error_login_incorrect_username_or_password">Incorrect password or email</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     //err_msg_email
 </resources>

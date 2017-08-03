@@ -7,7 +7,19 @@
             android:iconTint="@color/block"
             android:icon="@drawable/ic_add_white_24dp"
             >
-        <menu>
+        <!--<menu>-->
+
+            <item
+                android:id="@+id/nav_home"
+                android:icon="@drawable/ic_home_black_24dp"
+                android:title="Home" />
+
+            <item
+                android:id="@+id/nav_profile"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="Myprofile" />
+
+
             <item
                 android:id="@+id/nav_markattendance"
                 android:icon="@drawable/ic_menu_share"
@@ -16,21 +28,11 @@
                 android:id="@+id/nav_attendancestatus"
                 android:icon="@drawable/ic_menu_send"
                 android:title="Attendance Status" />
-        </menu>
+
+       <!-- </menu>-->
     </item>
 
-        <item
-            android:id="@+id/nav_profile"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Myprofile" />
-        <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_home_black_24dp"
-            android:title="Home" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Gallery" />
+
 
         <item
             android:title="Notifications"
